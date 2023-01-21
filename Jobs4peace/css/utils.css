@@ -1,0 +1,201 @@
+ 
+@font-face {
+    font-family: g-book;
+    src: url(/fonts/GothamBook.ttf);
+  }
+@font-face {
+    font-family: g-light;
+    src: url(/fonts/GothamLight.ttf);
+  }
+  
+  @font-face {
+      font-family: g-bold;
+      src: url(/fonts/GothamBold.ttf);
+    }
+  @font-face {
+      font-family: g-thin;
+      src: url(/fonts/Gotham-Thin.otf);
+    }
+/* Colors */
+:root {
+    --black: #000;
+    --white: #fff;
+
+    /* Primary */
+    --p1-50: #F9F6EE;
+    --p1-200: #EDE3CB;
+    --p1-700: #957D41;
+    --p1-500: #C6A656;
+    --p2-50: #E9EAED;
+    --p2-500: #272D48;
+    --p2-700: #1F243A;
+    --p2-900: #171B2B;
+
+    /* Gray  */
+    --g-50: #F1F1F2;
+    --g-600 :#575965;
+    --g-700: #44464F;
+    
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: g-book;
+    z-index: 0;
+    position: relative;
+    text-decoration: none;
+}
+
+h1.title {
+    font-size: 70px;
+    line-height: 90px;
+    font-family: g-thin;
+    font-weight: bold;
+    color: var(--p2-500);
+
+}
+h1.title span {
+    position: relative;
+    font-family: g-bold;
+}
+h1.title  span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    z-index: -10;
+    width: 100%;
+    height: 42px;
+    background-color: var(--p1-200);
+}
+h1.title.title-narrow > span {
+    font-family: g-thin !important;
+}
+.overlay-bg {
+    width: 505px;
+    min-height: 1024px;
+    position: absolute;
+    background-color: #F9F6EE;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+a {
+    text-decoration: none;
+}
+p.text {
+    font-family: g-light;
+    font-size: 24px;
+    width: 100% !important;
+    
+    line-height: 34px;
+    font-weight: 100;
+    margin: 40px 0;
+    color: var(--g-600);
+}
+
+
+.cursor {
+    width: .5rem; height: .5rem;
+    border-radius: 50%;
+    background-color: #000;
+    box-shadow: -3px -3px 5px var(--p1-500);
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: all .1s ;
+}
+
+
+@media screen and (max-width: 768px) {
+    /* ======================== General styles ===================  */
+    h1.title {
+        font-size: 40px !important;
+        line-height: 50px;
+        text-align: center;
+        margin-top: 2rem ;
+    }    
+    h1.title  span::after {
+        height: 25px;
+    }
+    p.text {
+        margin: 20px 0;
+    }
+    nav.navbar {
+        padding: 10px 0 !important;
+        align-items: center !important;
+    }
+    nav.navbar li.nav-item {
+        margin: 0.5rem 0;
+    }
+    a.nav-link.btn-join {
+        height: 3.3rem;
+    }
+    header .content {
+        margin-top: 50px !important;
+    }
+    a.btn-support {
+        margin: 0 auto;
+        height: 4rem;
+    }
+    
+    /* =================== starting ===============  */
+    .starting .row {
+        flex-direction: column;
+    }
+    .starting .left-start {
+        width: 100% !important;
+    }
+
+    /* =================join =================== */
+    .join-left .join-title {
+        margin: 0 !important;
+    }
+    .join-right {
+        margin: 1rem auto;
+    }
+    .join-right .join-content {
+        margin-left: 0 !important;
+        text-align: center;
+    }
+    .join-content .join-info a.btn-regist{
+        margin: 1rem auto;
+    }
+
+    /* ==================== footer ================= */
+    footer {
+        width: 100%;
+    }
+    footer .footer-content {
+        width: 100%;
+    }
+    footer .footer-content p, .footer-content a {
+        font-size: 20px !important;
+    }
+
+}
+
+/* ========================== Media for lorge screen ==========================  */
+@media (min-width:1400px) {
+    .container {
+        max-width: 1740px;
+    }
+    header {
+        margin-bottom: 8rem;
+    }
+    header .content {
+        margin-top: 14rem !important;
+    }
+    .overlay-bg {
+        height: 130vh;
+    }
+    section.starting  {
+        height: 1400px !important;
+    }
+    .join-left .join-title {
+        margin-top: 10rem !important;
+        margin-left: 10rem !important;
+    }
+}
